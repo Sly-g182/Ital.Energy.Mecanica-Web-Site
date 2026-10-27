@@ -1,0 +1,981 @@
+/* =============================================
+   ITALENERGY MECÁNICA — CSS COMPLETO
+   Estructura: html/index.html | css/styles.css
+   ============================================= */
+
+/* 1. VARIABLES Y BASE */
+:root {
+    --purple: #4b1684;
+    --purple-dark: #30105f;
+    --yellow: #f5ad22;
+    --green: #139b43;
+    --red: #ef3434;
+    --white: #ffffff;
+    --lavender: #f2eff9;
+    --text: #261c3c;
+    --muted: #706a7b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+.container {
+    width: min(1200px, 92%);
+    margin-inline: auto;
+}
+
+.section {
+    padding: 85px 0;
+    scroll-margin-top: 90px;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    color: var(--purple);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.26em;
+}
+
+h2 {
+    margin-bottom: 0;
+    color: var(--purple-dark);
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    line-height: 1.15;
+}
+
+h2 em {
+    color: var(--yellow);
+    font-style: normal;
+}
+
+/* 2. HEADER */
+.site-header {
+    position: relative;
+    z-index: 20;
+    background: var(--white);
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.06);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 96px;
+    gap: 22px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--purple-dark);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.brand img {
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-list a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 9px;
+    color: var(--purple-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.nav-list a.active,
+.nav-list a:hover {
+    background: var(--yellow);
+    color: var(--purple-dark);
+}
+
+/* Verde con una franja italiana bajo el botón */
+.header-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+    padding: 13px 18px 17px;
+    border-radius: 10px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 6px 16px rgba(19, 155, 67, 0.2);
+    transition: transform 0.25s ease;
+}
+
+.header-cta::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background: linear-gradient(to right, var(--green) 0 33.33%, var(--white) 33.33% 66.66%, var(--red) 66.66%);
+}
+
+.header-cta:hover {
+    transform: translateY(-2px);
+}
+
+.header-line {
+    display: flex;
+    height: 4px;
+    background: var(--white);
+}
+
+.line-green {
+    width: 33.33%;
+    background: var(--green);
+}
+
+.line-red {
+    width: 33.33%;
+    margin-left: auto;
+    background: var(--red);
+}
+
+/* 3. HERO: LA FOTO CUBRE TODO EL FONDO */
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 46% 54%;
+    min-height: 690px;
+    overflow: hidden;
+    background-color: #173251;
+    background-image: url("../image/Solar Panels at Golden Hour.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Curva blanca encima de la fotografía, sin franja gris */
+.hero-left {
+    position: relative;
+    z-index: 2;
+    width: calc(100% + 105px);
+    background: var(--white);
+    border-radius: 0 48% 48% 0;
+    box-shadow: none;
+}
+
+.hero-left-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 690px;
+    max-width: 760px;
+    padding: 45px 100px 48px max(45px, calc((100vw - 1350px) / 2));
+}
+
+.hero-eyebrow {
+    margin-bottom: 18px;
+    color: #5b348f;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    margin-bottom: 22px;
+    font-weight: 900;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.hero-title-top {
+    display: block;
+    color: var(--yellow);
+    font-size: clamp(2.3rem, 4.1vw, 4.5rem);
+}
+
+.hero-title-bottom {
+    display: block;
+    color: var(--purple);
+    font-size: clamp(2.2rem, 4vw, 4.4rem);
+}
+
+.hero-description {
+    max-width: 520px;
+    margin-bottom: 22px;
+    font-size: 1.02rem;
+    line-height: 1.5;
+}
+
+.hero-description strong {
+    color: var(--purple);
+}
+
+.hero-list {
+    margin: 0 0 27px;
+    padding: 0;
+    list-style: none;
+}
+
+.hero-list li {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 9px;
+    color: var(--purple);
+    font-size: 1.02rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.hero-list li::before {
+    content: "✓";
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-start;
+    gap: 22px;
+    padding: 12px 13px 12px 25px;
+    border-radius: 999px;
+    background: var(--yellow);
+    color: var(--purple-dark);
+    font-size: 1.08rem;
+    font-weight: 800;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(48, 16, 95, 0.2);
+}
+
+.hero-button-icon {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--purple);
+    color: var(--white);
+    font-size: 1.35rem;
+}
+
+/* 4. LADO DERECHO: TRANSPARENTE PARA VER EL FONDO */
+.hero-right {
+    position: relative;
+    z-index: 3;
+    min-height: 690px;
+    background: transparent;
+    overflow: visible;
+}
+
+/* La foto se aplica al hero entero, no a este img */
+.hero-right > img {
+    display: none;
+}
+
+/* Sombra solo en la parte inferior, para leer los beneficios */
+.hero-right::after {
+    content: "";
+    position: absolute;
+    inset: 65% 0 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
+    pointer-events: none;
+}
+
+.hero-features {
+    position: absolute;
+    right: 24px;
+    bottom: 22px;
+    z-index: 6;
+    display: flex;
+    gap: 22px;
+}
+
+.feature-item {
+    color: var(--white);
+    text-align: center;
+}
+
+.feature-circle {
+    display: grid;
+    place-items: center;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 8px;
+    border: 3px solid var(--yellow);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    font-size: 1.6rem;
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+}
+
+/* 5. INSIGNIA 100% SUSTENTABLE */
+.hero-badge {
+    position: absolute;
+    top: 52%;
+    left: 9%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 245px;
+    height: 245px;
+    padding: 12px;
+    border: 5px solid var(--white);
+    border-radius: 50%;
+    background: var(--yellow);
+    text-align: center;
+    box-shadow: 0 0 0 6px rgba(245, 173, 34, 0.15), 0 0 30px 9px rgba(245, 173, 34, 0.48);
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-badge strong {
+    color: var(--purple);
+    font-size: 4.2rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.badge-text {
+    margin: 7px 0;
+    color: var(--white);
+    font-size: 1.22rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+/* Hojas SVG blancas; cambia emojis por SVG en el HTML */
+.badge-leaf {
+    display: block;
+    width: 34px;
+    height: 34px;
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hero-badge:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 0 8px rgba(245, 173, 34, 0.2), 0 0 40px 12px rgba(245, 173, 34, 0.6);
+}
+
+/* 6. SERVICIOS */
+.services {
+    background: var(--lavender);
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 34px;
+}
+
+.section-heading > p {
+    max-width: 400px;
+    margin: 0;
+    padding: 18px 20px;
+    border-left: 4px solid var(--red);
+    border-radius: 0 12px 12px 0;
+    background: var(--white);
+    color: var(--purple-dark);
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.5;
+    box-shadow: 0 6px 20px rgba(48, 16, 95, 0.07);
+}
+
+.services h2::after,
+.projects h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin-top: 14px;
+    border-radius: 999px;
+    background: var(--yellow);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.service-card {
+    overflow: hidden;
+    border: 1px solid rgba(75, 22, 132, 0.07);
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: 0 8px 25px rgba(48, 16, 95, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(48, 16, 95, 0.16);
+}
+
+.service-photo {
+    position: relative;
+    height: 145px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Rutas relativas a css/styles.css */
+.photo-home {
+    background-image: url("../image/servicio1.jpg");
+}
+
+.photo-country {
+    background-image: url("../image/image3.jpg");
+}
+
+.photo-business {
+    background-image: url("../image/fondo.jpg");
+}
+
+.photo-farm {
+    background-image: url("../image/trabajo2.jpg");
+}
+
+.photo-project {
+    background-image: url("../image/fondo.jpg");
+}
+
+.service-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--purple-dark);
+    font-size: 1.65rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-copy {
+    padding: 17px 15px 22px;
+}
+
+.service-copy h3 {
+    margin-bottom: 8px;
+    color: var(--purple);
+    font-size: 1.12rem;
+}
+
+.service-copy p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 7. PROYECTOS */
+.projects {
+    border-top: 1px solid #eceaf2;
+    background: var(--white);
+}
+
+.text-link {
+    color: var(--purple);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 15px;
+    background: #ddd;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card figcaption {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 0.85rem;
+}
+
+.project-card figcaption strong {
+    color: var(--purple);
+    font-size: 1rem;
+}
+
+.gallery-note {
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/* 8. AGENDA */
+.booking {
+    padding: 55px 0;
+    background: #fff5e3;
+    scroll-margin-top: 90px;
+}
+
+.booking-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.booking h2 {
+    margin-bottom: 10px;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.booking p:not(.eyebrow) {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 26px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-purple {
+    background: var(--yellow);
+    color: var(--purple-dark);
+}
+
+/* 9. FOOTER */
+.footer {
+    padding: 45px 0 15px;
+    background: linear-gradient(120deg, #482087, #30105f);
+    color: var(--white);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.5fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.footer-brand img {
+    width: min(100%, 210px);
+    height: auto;
+    max-height: 210px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: var(--white);
+}
+
+.footer-contact h2 {
+    margin-bottom: 12px;
+    color: var(--white);
+    font-size: 1.7rem;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    display: inline-block;
+    margin: 5px 0 12px;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-values {
+    display: grid;
+    gap: 18px;
+    padding-left: 30px;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    font-weight: 700;
+}
+
+.footer-values span {
+    display: inline-grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+}
+
+.footer-bottom {
+    margin: 35px 0 0;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* 10. TABLETS: TEXTO ARRIBA, FOTO ABAJO */
+@media (max-width: 1150px) {
+    .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        background-position: center bottom;
+    }
+
+    .hero-left {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .hero-left-inner {
+        max-width: 850px;
+        min-height: auto;
+        padding: 48px 6%;
+    }
+
+    .hero-right {
+        min-height: 440px;
+    }
+
+    .hero-badge {
+        top: 18%;
+        left: 50%;
+        width: 170px;
+        height: 170px;
+    }
+
+    .hero-badge strong {
+        font-size: 2.7rem;
+    }
+
+    .badge-text {
+        font-size: 0.85rem;
+    }
+
+    .badge-leaf {
+        width: 23px;
+        height: 23px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+}
+
+/* 11. CELULARES */
+@media (max-width: 700px) {
+    .header-inner {
+        gap: 12px;
+    }
+
+    .brand img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .header-cta {
+        display: none;
+    }
+
+    .nav-list {
+        gap: 3px;
+    }
+
+    .nav-list a {
+        padding: 8px;
+        font-size: 0.82rem;
+    }
+
+    .hero-left-inner {
+        padding: 40px 22px;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+    }
+
+    .hero-title-top {
+        font-size: clamp(2.1rem, 8vw, 3.2rem);
+    }
+
+    .hero-title-bottom {
+        font-size: clamp(2rem, 7.8vw, 3.2rem);
+        overflow-wrap: anywhere;
+    }
+
+    .hero-description {
+        font-size: 0.96rem;
+    }
+
+    .hero-list li {
+        font-size: 0.94rem;
+    }
+
+    .hero-button {
+        gap: 10px;
+        padding-left: 20px;
+        font-size: 0.95rem;
+    }
+
+    .hero-right {
+        min-height: 350px;
+    }
+
+    .hero-badge {
+        top: 18%;
+        width: 135px;
+        height: 135px;
+        padding: 7px;
+    }
+
+    .hero-badge strong {
+        font-size: 2.1rem;
+    }
+
+    .badge-text {
+        margin: 4px 0;
+        font-size: 0.69rem;
+    }
+
+    .badge-leaf {
+        width: 18px;
+        height: 18px;
+    }
+
+    .hero-features {
+        right: 10px;
+        bottom: 15px;
+        gap: 12px;
+    }
+
+    .feature-circle {
+        width: 48px;
+        height: 48px;
+        font-size: 1.15rem;
+    }
+
+    .feature-item p {
+        font-size: 0.69rem;
+    }
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        max-width: none;
+        margin-top: 18px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img {
+        height: 250px;
+    }
+
+    .booking-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-values {
+        padding: 0;
+        border: none;
+    }
+
+    .footer-values {
+        justify-content: center;
+    }
+}
+
+/* 12. CELULARES PEQUEÑOS */
+@media (max-width: 440px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-photo {
+        height: 200px;
+    }
+
+    .hero-right {
+        min-height: 300px;
+    }
+
+    .hero-badge {
+        width: 115px;
+        height: 115px;
+    }
+
+    .hero-badge strong {
+        font-size: 1.8rem;
+    }
+
+    .badge-text {
+        font-size: 0.6rem;
+    }
+}
+
+/* 13. ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
